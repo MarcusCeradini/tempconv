@@ -14,7 +14,7 @@ def fahrenheit_to_celsius(f: float) -> float:
 def celsius_to_kelvin(c: float) -> float:
     print(c + 273.15)
     if c < ABSOLUTE_ZERO_C:
-        raise ValueError(f"The value is below absolute 0")
+        raise ValueError("The value is below absolute 0")
     return c + 273.15
 
 

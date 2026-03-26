@@ -1,6 +1,6 @@
 import pytest
 from src.converter import celsius_to_fahrenheit, celsius_to_kelvin, convert
-from src.converter import kelvin_to_celsius, fahrenheit_to_celsius
+from src.converter import kelvin_to_celsius
 
 # ── Basic tests using fixtures ──────────────────────────────────
 
@@ -15,11 +15,13 @@ def test_boiling_c_to_f(boiling_point):
 
 
 def test_freezing_c_to_k(freezing_point):
-    assert celsius_to_kelvin(freezing_point["C"]) == pytest.approx(freezing_point["K"])
+    x = pytest.approx(freezing_point["K"])
+    assert celsius_to_kelvin(freezing_point["C"]) == x
 
 
 def test_boiling_c_to_k(boiling_point):
-    assert celsius_to_kelvin(boiling_point["C"]) == pytest.approx(boiling_point["K"])
+    x = pytest.approx(boiling_point["K"])
+    assert celsius_to_kelvin(boiling_point["C"]) == x
 
 
 # ── Parametrize for multiple conversion cases ───────────────────
